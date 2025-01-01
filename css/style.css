@@ -355,6 +355,80 @@ a:focus {
      object-position: top right;
 }
 
+/* General container for the section */
+.about-section {
+  padding: 40px 20px;
+  /* background-color: #f9f9f9; */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Flexbox container for the image and text */
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Image styling */
+.image-box {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Text box styling */
+.text-box {
+  flex: 1;
+  max-width: 50%;
+}
+
+.text-box h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #efbd50;
+}
+
+.text-box p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-box {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .text-box {
+    max-width: 100%;
+  }
+
+  .text-box h2 {
+    font-size: 28px;
+  }
+
+  .text-box p {
+    font-size: 16px;
+  }
+}
+
 .product_section .heading_container {
   margin-bottom: 20px;
 }
@@ -786,6 +860,73 @@ a:focus {
 
 .client_section .carousel-control-next {
   right: 25%;
+}
+
+.feedback_section {
+  padding: 40px 0;
+}
+
+.feedback_section .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.feedback_section .heading_container {
+  margin-bottom: 20px;
+}
+
+.feedback_section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feedback_section .form-group {
+  margin: 0;
+}
+
+.feedback_section input[type="text"],
+.feedback_section textarea,
+.feedback_section input[type="file"] {
+  width: 100%;
+  padding: 30px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+}
+
+.feedback_section textarea {
+  resize: none;
+  height: 100px;
+}
+
+.feedback_section button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #efbd50;
+  border: 1px solid #efbd50;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.feedback_section button:hover {
+  border: 1px solid #efbd50;
+  color: #fff;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .feedback_section .container {
+     padding: 15px;
+  }
+
+  .feedback_section button {
+     font-size: 14px;
+  }
 }
 
 /* footer section*/

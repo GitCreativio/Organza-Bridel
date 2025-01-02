@@ -16,6 +16,8 @@
       <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
       <!-- font awesome style -->
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+      <!-- form submission ajax -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <!-- font awesome style -->
       <link href="css/font-awesome.min.css" rel="stylesheet" />
       <!-- Custom styles for this template -->
@@ -125,12 +127,10 @@
          </div>
       </section>
       <!-- end why section -->
-      
-         
             <div class="row">
                <div class="col-lg-8 offset-lg-2">
                   <div class="full">
-                     <form action="index.html">
+                     <form id="submit-form" action="">
                         <fieldset>
                            <input type="text" placeholder="Enter your full name" name="name" required />
                            <input type="email" placeholder="Enter your email address" name="email" required />
@@ -145,6 +145,26 @@
          </div>
       </section>
       <!-- end why section -->
+
+      <script>
+         $("#submit-form").submit((e)=>{
+             e.preventDefault()
+             $.ajax({
+                 url:"https://script.google.com/macros/s/AKfycbxKnW2ndxXZUHdRkcv2beUcv7z8jvHEnDyidgrmoCZisYZ2zZ-nD3Fpg6TgnKL6oJcUYQ/exec",
+                 data:$("#submit-form").serialize(),
+                 method:"post",
+                 success:function (response){
+                     alert("Form submitted successfully")
+                     window.location.reload()
+                     //window.location.href="https://google.com"
+                 },
+                 error:function (err){
+                     alert("Something Error")
+     
+                 }
+             })
+         })
+     </script>
 
 <!-- footer start -->
 <footer style="background-color:#044446; color: #efbd50;">
